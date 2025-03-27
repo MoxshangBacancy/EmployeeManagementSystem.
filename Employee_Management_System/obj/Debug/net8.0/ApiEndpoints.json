@@ -1,0 +1,489 @@
+[
+  {
+    "ContainingType": "Employee_Management_System.Controllers.AdminTimesheetController",
+    "Method": "DownloadEmployeeTimesheets",
+    "RelativePath": "Api/Admin/AllEmployee/ExcelReport",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Employee_Management_System.Controllers.AdminLeaveController",
+    "Method": "UpdateLeaveStatus",
+    "RelativePath": "Api/Admin/ChangeStatus/{leaveId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "leaveId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "status",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AdminUserManagementController",
+    "Method": "CreateUser",
+    "RelativePath": "Api/Admin/CreateUser",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Employee_Management_System.Request.CreateUserRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Employee_Management_System.Controllers.AdminReportController",
+    "Method": "GetAdminDashboard",
+    "RelativePath": "Api/Admin/Dashboard",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Employee_Management_System.Controllers.AdminEmployeeManagementController",
+    "Method": "DeleteEmployee",
+    "RelativePath": "Api/Admin/DeleteEmployee/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AdminUserManagementController",
+    "Method": "DeleteUser",
+    "RelativePath": "Api/Admin/DeleteUser/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Employee_Management_System.Controllers.AdminLeaveController",
+    "Method": "GetAllLeaveRequests",
+    "RelativePath": "Api/Admin/GetAllLeaves",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AdminUserManagementController",
+    "Method": "GetAllUsers",
+    "RelativePath": "Api/Admin/GetAllUsers",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Employee_Management_System.Controllers.AdminEmployeeManagementController",
+    "Method": "GetAllEmployees",
+    "RelativePath": "Api/Admin/GetEmployeesWithTimesheets",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AdminUserManagementController",
+    "Method": "GetUserById",
+    "RelativePath": "Api/Admin/GetUserById/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Employee_Management_System.Controllers.AdminReportController",
+    "Method": "GenerateWorkHoursReport",
+    "RelativePath": "Api/Admin/Report/Work-Hours",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "periodType",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "year",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "monthOrWeek",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Employee_Management_System.Controllers.AdminTimesheetController",
+    "Method": "GetEmployeeTimesheets",
+    "RelativePath": "Api/Admin/TimesheetForEmployee/{employeeId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "employeeId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Employee_Management_System.Controllers.AdminEmployeeManagementController",
+    "Method": "UpdateEmployeeDetails",
+    "RelativePath": "Api/Admin/UpdateEmployees/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "Employee_Management_System.Request.EmployeeUpdateRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Employee_Management_System.Controllers.AdminTimesheetController",
+    "Method": "ModifyWorkHours",
+    "RelativePath": "Api/Admin/UpdateTime/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "Employee_Management_System.Data.Entities.TimesheetRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AdminUserManagementController",
+    "Method": "UpdateUser",
+    "RelativePath": "Api/Admin/UpdateUser/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "Employee_Management_System.Request.UpdateUserRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Employee_Management_System.Controllers.AuthController",
+    "Method": "AuthenticateUser",
+    "RelativePath": "Api/Auth/Login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "loginRequest",
+        "Type": "Employee_Management_System.Request.LoginRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Employee_Management_System.Controllers.AuthController",
+    "Method": "RevokeUserSession",
+    "RelativePath": "Api/Auth/Logout",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Employee_Management_System.Request.RefreshTokenRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Employee_Management_System.Controllers.AuthController",
+    "Method": "RefreshAccessToken",
+    "RelativePath": "Api/Auth/RefreshToken",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Employee_Management_System.Request.RefreshTokenRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Employee_Management_System.Controllers.AuthController",
+    "Method": "ConfirmPasswordReset",
+    "RelativePath": "Api/Auth/ResetPassword/NewPassword",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Employee_Management_System.Request.ResetPasswordRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Employee_Management_System.Controllers.AuthController",
+    "Method": "RequestPasswordReset",
+    "RelativePath": "Api/Auth/ResetPassword/Request",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Employee_Management_System.Request.PasswordResetRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AdminDepartmentController",
+    "Method": "AssignEmployeeToDepartment",
+    "RelativePath": "Api/Departments/AssignEmployee",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Employee_Management_System.Request.AssignDepartmentRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AdminDepartmentController",
+    "Method": "CreateDepartment",
+    "RelativePath": "Api/Departments/Create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Employee_Management_System.DTOs.DepartmentCreateDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AdminDepartmentController",
+    "Method": "GetAllDepartmentsWithEmployees",
+    "RelativePath": "Api/Departments/GetAllWithEmploy",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AdminDepartmentController",
+    "Method": "RemoveDepartment",
+    "RelativePath": "Api/Departments/Remove/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AdminDepartmentController",
+    "Method": "UpdateDepartmentName",
+    "RelativePath": "Api/Departments/Update/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "Employee_Management_System.DTOs.DepartmentUpdateDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Employee_Management_System.Controllers.EmployeeLeaveController",
+    "Method": "ApplyForLeave",
+    "RelativePath": "Api/Employee/ApplyForLeave",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Employee_Management_System.Request.LeaveRequestDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Employee_Management_System.Controllers.EmployeeLeaveController",
+    "Method": "GetMyLeaveRequests",
+    "RelativePath": "Api/Employee/GetMyLeaves",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Employee_Management_System.Controllers.EmployeeDashboardController",
+    "Method": "GetEmployeeDashboard",
+    "RelativePath": "Api/EmployeeDashboard",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EmployeeProfileController",
+    "Method": "GetEmployeeProfile",
+    "RelativePath": "Api/Employees/MyProfile",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EmployeeProfileController",
+    "Method": "UpdateEmployeeProfile",
+    "RelativePath": "Api/Employees/UpdateProfile",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Employee_Management_System.Data.Entities.UpdateProfileRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EmployeeTimesheetController",
+    "Method": "GetMyTimesheetRecords",
+    "RelativePath": "Api/Timesheets/GetMyRecords",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EmployeeTimesheetController",
+    "Method": "LogWorkHours",
+    "RelativePath": "Api/Timesheets/LogWorksHours",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Employee_Management_System.Data.Entities.TimesheetRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
