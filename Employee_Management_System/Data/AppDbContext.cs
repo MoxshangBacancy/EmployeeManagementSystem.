@@ -22,6 +22,8 @@ namespace Employee_Management_System.Data
             modelBuilder.ApplyConfiguration(new RoleConfiguration());
             modelBuilder.ApplyConfiguration(new DepartmentConfiguration());
             modelBuilder.ApplyConfiguration(new EmployeeConfiguration());
+            modelBuilder.ApplyConfiguration(new TimesheetConfiguration());
+            modelBuilder.ApplyConfiguration(new LeaveConfiguration());
         }
     }
 
