@@ -93,7 +93,7 @@ namespace Employee_Management_System.Service
             return await _context.Timesheets.Where(t => t.EmployeeId == employeeId)
                                             .OrderByDescending(t => t.Date)
                                             .Take(count)
-                                            .ToListAsync();
+                                            .ToListAsync(); 
         }
 
     }

@@ -35,7 +35,7 @@ namespace Employee_Management_System.Controllers
             try
             {
                 var email = User.FindFirst(ClaimTypes.Email)?.Value;
-                Console.WriteLine($"🔹 Extracted Email from JWT: {email}");
+                Console.WriteLine($"Extracted Email from JWT: {email}");
 
                 if (string.IsNullOrEmpty(email))
                     return Unauthorized(new { message = "Invalid token or session expired." });
@@ -43,11 +43,11 @@ namespace Employee_Management_System.Controllers
                 var employee = await _employeeService.GetEmployeeProfileAsync(email);
                 if (employee == null)
                 {
-                    Console.WriteLine($"❌ Employee not found for email: {email}");
+                    Console.WriteLine($"Employee not found for email: {email}");
                     return NotFound(new { message = "Employee not found." });
                 }
 
-                Console.WriteLine($"✅ Employee found: {employee.EmployeeId}");
+                Console.WriteLine($"Employee found: {employee.EmployeeId}");
 
                 var totalHours = await _timesheetService.GetTotalLoggedHoursAsync(employee.EmployeeId);
                 var leaveBalance = await _leaveService.GetLeaveBalanceAsync(employee.EmployeeId);

@@ -58,7 +58,7 @@ public class EmployeeTimesheetController : ControllerBase
 
     // Log Work Hours
     [HttpPost("LogWorksHours")]
-    public async Task<IActionResult> LogWorkHours([FromBody] Employee_Management_System.Data.Entities.TimesheetRequest request)
+    public async Task<IActionResult> LogWorkHours([FromBody] TimesheetRequest request)
     {
         try
         {

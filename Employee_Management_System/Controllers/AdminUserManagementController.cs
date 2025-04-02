@@ -4,6 +4,7 @@ using Employee_Management_System.Request;
 using Employee_Management_System.Service;
 using Employee_Management_System.Services;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using OfficeOpenXml;
 
@@ -87,13 +88,16 @@ public class AdminUserManagementController : ControllerBase
     {
         try
         {
+            var passwordHasher = new PasswordHasher<User>();
+            var hashedPassword = passwordHasher.HashPassword(null, request.Password);
+            Console.WriteLine(hashedPassword);
             var user = new User
             {
                 FirstName = request.FirstName,
                 LastName = request.LastName,
                 Email = request.Email,
                 Phone = request.Phone,
-                PasswordHash = _userService.HashPassword(request.Password),
+                PasswordHash = hashedPassword,// Secure Hashing
                 RoleId = request.RoleId,
                 IsActive = true,
                 CreatedAt = DateTime.UtcNow,
@@ -112,6 +116,7 @@ public class AdminUserManagementController : ControllerBase
             _logger.LogError(ex, "Error creating user.");
             return StatusCode(500, new { message = "An error occurred while creating the user. Please try again later." });
         }
+
     }
 
 

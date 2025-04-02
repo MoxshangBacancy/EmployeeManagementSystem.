@@ -39,30 +39,39 @@ namespace Employee_Management_System.Service
         }
 
 
-        public async Task<bool> ApplyLeaveAsync(int employeeId, Leave leave)
+        public async Task<bool> ApplyLeaveAsync(int userId, Leave leave)
         {
             try
             {
-                var employee = await _employeeRepository.GetEmployeeByIdAsync(employeeId);
+                Console.WriteLine($"Fetching Employee for User ID: {userId}");
+                var employee = await _employeeRepository.GetEmployeeByUserIdAsync(userId);
+
                 if (employee == null)
                 {
-                    _logger.LogWarning($"Leave application failed: Employee ID {employeeId} does not exist.");
+                    Console.WriteLine($"No employee found for User ID: {userId}");
                     return false;
                 }
 
-                leave.EmployeeId = employeeId;
+                Console.WriteLine($"Found Employee: EmployeeId = {employee.EmployeeId}");
+
+                leave.EmployeeId = employee.EmployeeId;
                 leave.AppliedAt = DateTime.UtcNow;
-                leave.Status = "Pending"; 
+                leave.Status = "Pending";
+
+                Console.WriteLine($"Inserting leave for Employee ID: {leave.EmployeeId}");
 
                 bool isApplied = await _leaveRepository.ApplyLeaveAsync(leave);
+                Console.WriteLine($"Leave Application Status: {isApplied}");
                 return isApplied;
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, $"Error applying for leave for Employee ID {employeeId}");
+                Console.WriteLine($"Exception while applying leave: {ex.Message}");
                 return false;
             }
         }
+
+
 
 
         public async Task<bool> UpdateLeaveStatusAsync(int leaveId, string status)

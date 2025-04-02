@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 
 [Route("Api/Departments")]
 [ApiController]
-[Authorize(Roles = "Admin")] 
+//[Authorize(Roles = "Admin")] 
 public class AdminDepartmentController : ControllerBase
 {
     private readonly IDepartmentService _departmentService;
@@ -88,7 +88,7 @@ public class AdminDepartmentController : ControllerBase
         }
         catch (Exception ex)
         {
-            return StatusCode(500, new { message = "An error occurred while creating the department. Please try again later." });
+            return StatusCode(500, new { message = "An error occurred while creating the department. Please try again later."});
         }
     }
 

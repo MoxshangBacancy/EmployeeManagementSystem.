@@ -8,7 +8,7 @@ namespace Employee_Management_System.Repository
         Task<Employee?> GetByIdAsync(int id);
         Task<bool> UpdateEmployeeProfileAsync(Employee employee);
         Task<bool> ResetPasswordAsync(string email, string newPassword);
-        Task<Employee> GetEmployeeByIdAsync(int employeeId);
+        Task<Employee?> GetEmployeeByUserIdAsync(int userId);
 
     }
 }

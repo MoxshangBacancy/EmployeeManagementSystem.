@@ -46,7 +46,6 @@ namespace Employee_Management_System.Services
                 if (await _context.Users.AnyAsync(u => u.Phone == user.Phone))
                     throw new ArgumentException("Phone number already exists.");
 
-                user.PasswordHash = HashPassword(user.PasswordHash);
 
                 user.CreatedAt = DateTime.UtcNow;
                 user.UpdatedAt = DateTime.UtcNow;

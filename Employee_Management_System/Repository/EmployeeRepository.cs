@@ -98,9 +98,21 @@ public class EmployeeRepository : IEmployeeRepository
             return new List<EmployeeDTO>();  
         }
     }
-        public async Task<Employee> GetEmployeeByIdAsync(int employeeId)
+    public async Task<Employee?> GetEmployeeByUserIdAsync(int userId)
     {
-        return await _context.Employees.FirstOrDefaultAsync(e => e.EmployeeId == employeeId);
+        Console.WriteLine($"Fetching Employee for User ID: {userId}");
+
+        var employee = await _context.Employees
+            .FirstOrDefaultAsync(e => e.UserId == userId);
+
+        if (employee == null)
+            Console.WriteLine($"User ID {userId} not found in Employees table.");
+        else
+            Console.WriteLine($"Found Employee: EmployeeId = {employee.EmployeeId}");
+
+        return employee;
     }
+
+
 
 }

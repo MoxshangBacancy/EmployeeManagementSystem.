@@ -7,6 +7,8 @@ using Employee_Management_System.Data;
 using Employee_Management_System.Data.Entities;
 using Employee_Management_System.Repository;
 using Microsoft.EntityFrameworkCore;
+using Employee_Management_System.Service;
+using Microsoft.AspNetCore.Identity;
 
 namespace Employee_Management_System.Services
 {
@@ -130,31 +132,35 @@ namespace Employee_Management_System.Services
 
         public async Task<User?> ValidateUserAsync(string email, string enteredPassword)
         {
+            
+
             var user = await _context.Users
                              .Include(u => u.Role) 
                              .FirstOrDefaultAsync(u => u.Email == email);
 
+
             if (user == null)
-                return null; 
+                return null;
 
-            if (user.PasswordHash.Length == 44)
+
+            Console.WriteLine($"[LOGIN] User found: {user.Email}");
+            Console.WriteLine($"[LOGIN] Stored Password Hash: {user.PasswordHash}");
+
+            var passwordHasher = new PasswordHasher<User>();
+            var result = passwordHasher.VerifyHashedPassword(null, user.PasswordHash, enteredPassword);
+
+            Console.WriteLine($"[LOGIN] Password verification result: {result}");
+
+            if (result == PasswordVerificationResult.Success)
             {
-                Console.WriteLine("Verifying SHA-256 password...");
-                string enteredSha256Hash = HashPassword(enteredPassword);
-                Console.WriteLine($"Entered Password Hash: {enteredSha256Hash}");
-                Console.WriteLine($"Stored Password Hash: {user.PasswordHash}");
-                if (user.PasswordHash == enteredSha256Hash)
-                {
-                    Console.WriteLine("SHA-256 Password Verified!");
-                    return user; 
-                }
-                else
-                {
-                    Console.WriteLine("Invalid credentials");
-                    return null; 
-                }
+                Console.WriteLine("Password Verified!");
+                return user;
             }
-
+            else
+            {
+                Console.WriteLine("Invalid credentials");
+                return null;
+            }
             return user; 
         } 
         public string HashPassword(string password)

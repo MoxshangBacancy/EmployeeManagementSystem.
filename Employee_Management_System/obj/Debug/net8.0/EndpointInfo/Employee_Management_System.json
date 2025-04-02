@@ -742,7 +742,7 @@
         }
       }
     },
-    "/Api/Employees/MyProfile": {
+    "/Api/v1/Employees/MyProfile": {
       "get": {
         "tags": [
           "EmployeeProfile"
@@ -754,7 +754,7 @@
         }
       }
     },
-    "/Api/Employees/UpdateProfile": {
+    "/Api/v1/Employees/UpdateProfile": {
       "put": {
         "tags": [
           "EmployeeProfile"

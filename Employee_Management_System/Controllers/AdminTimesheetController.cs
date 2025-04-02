@@ -101,7 +101,7 @@ namespace Employee_Management_System.Controllers
 
         // Modify Work Hours
         [HttpPut("UpdateTime/{id}")]
-        public async Task<IActionResult> ModifyWorkHours(int id, [FromBody] Data.Entities.TimesheetRequest request)
+        public async Task<IActionResult> ModifyWorkHours(int id, [FromBody] TimesheetRequest request)
         {
             try
             {

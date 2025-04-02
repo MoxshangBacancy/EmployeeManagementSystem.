@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 
-[Route("Api/Employees")]
+[Route("Api/v1/Employees")]
 [ApiController]
 [Authorize(Roles = "Employee")] 
 public class EmployeeProfileController : ControllerBase

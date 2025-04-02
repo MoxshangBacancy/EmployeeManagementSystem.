@@ -435,32 +435,6 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "EmployeeProfileController",
-    "Method": "GetEmployeeProfile",
-    "RelativePath": "Api/Employees/MyProfile",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "EmployeeProfileController",
-    "Method": "UpdateEmployeeProfile",
-    "RelativePath": "Api/Employees/UpdateProfile",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "request",
-        "Type": "Employee_Management_System.Data.Entities.UpdateProfileRequest",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
     "ContainingType": "EmployeeTimesheetController",
     "Method": "GetMyTimesheetRecords",
     "RelativePath": "Api/Timesheets/GetMyRecords",
@@ -481,6 +455,32 @@
       {
         "Name": "request",
         "Type": "Employee_Management_System.Data.Entities.TimesheetRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EmployeeProfileController",
+    "Method": "GetEmployeeProfile",
+    "RelativePath": "Api/v1/Employees/MyProfile",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EmployeeProfileController",
+    "Method": "UpdateEmployeeProfile",
+    "RelativePath": "Api/v1/Employees/UpdateProfile",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Employee_Management_System.Data.Entities.UpdateProfileRequest",
         "IsRequired": true
       }
     ],
